@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Comprare il latte",
+    "description": "Supermercato sotto casa",
+    "status": "To do",
+    "id": 1,
+    "createdAt": "2025-03-25T21:26:05.964Z"
+  },
+  {
+    "title": "Leggere un libro",
+    "description": "Capitolo 3",
+    "status": "To do",
+    "id": 2,
+    "createdAt": "2025-03-20T21:26:05.965Z"
+  },
+  {
+    "title": "Chiamare il dottore",
+    "description": "Prenotare visita annuale",
+    "status": "To do",
+    "id": 3,
+    "createdAt": "2025-03-20T21:26:05.965Z"
+  },
+  {
+    "title": "Completare progetto React",
+    "description": "Task Manager avanzato",
+    "status": "Doing",
+    "id": 4,
+    "createdAt": "2025-03-21T21:26:05.965Z"
+  },
+  {
+    "title": "Scrivere articolo",
+    "description": "Nuovo post su blog tecnico",
+    "status": "Doing",
+    "id": 5,
+    "createdAt": "2025-03-20T21:26:05.965Z"
+  },
+  {
+    "title": "Fare esercizio",
+    "description": "30 minuti di corsa",
+    "status": "Done",
+    "id": 6,
+    "createdAt": "2025-03-26T21:26:05.965Z"
+  }
+]
