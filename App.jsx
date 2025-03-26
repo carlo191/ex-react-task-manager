@@ -1,17 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./DefaultLayout";
-import HomePage from "./HomePage";
-import AboutPage from "./AboutPage";
-import ContactPage from "./ContactPage";
+import Addtask from "./pages/Addtask";
+import TaskList from "./pages/TaskList";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route element={<DefaultLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/" element={<TaskList />} />
+          <Route path="/AddTask" element={<Addtask />} />
         </Route>
       </Routes>
     </Router>

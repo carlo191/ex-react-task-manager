@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 
- export default function Navbar() {
+export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          MyApp
+          Lista Task
         </NavLink>
         <button
           className="navbar-toggler"
@@ -21,18 +21,8 @@ import { NavLink } from "react-router-dom";
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
-                Contact
+              <NavLink className="nav-link" to="/AddTask">
+                Add Task
               </NavLink>
             </li>
           </ul>
@@ -41,4 +31,3 @@ import { NavLink } from "react-router-dom";
     </nav>
   );
 }
-
