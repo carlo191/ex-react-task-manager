@@ -16,3 +16,68 @@ footer {
   padding: 20px;
   box-sizing: border-box;
 }
+/* Stile generico per la tabella */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Rimuove gli spazi tra le celle */
+  background-color: #f4f4f9; /* Colore di sfondo della tabella */
+}
+
+/* Intestazioni della tabella */
+th {
+  background-color: #0056b3; /* Blu scuro per l'intestazione */
+  color: white; /* Colore del testo */
+  padding: 10px;
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Righe della tabella */
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd; /* Bordi sottili grigi */
+}
+
+/* Colore alternato delle righe */
+tr:nth-child(even) {
+  background-color: #e6f0ff; /* Blu chiaro per righe pari */
+}
+
+tr:nth-child(odd) {
+  background-color: white; /* Bianco per righe dispari */
+}
+
+/* Hover sulle righe */
+tr:hover {
+  background-color: #cce0ff; /* Cambia il colore al passaggio del mouse */
+}
+
+/* Bordi della tabella */
+table,
+th,
+td {
+  border: 1px solid #007bff; /* Bordi blu chiaro */
+}
+
+/* Ombra della tabella */
+table {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera per dare profondità */
+}
+
+/* Stile per il corpo della tabella */
+tbody tr {
+  transition: background-color 0.3s; /* Transizione morbida sul colore di hover */
+}
+
+/* Stile per il task.status */
+td.todo {
+  background-color: red; /* Rosso per i task in sospeso */
+}
+td.done {
+  background-color: #28a745; /* Verde per i task completati */
+}
+td.doing {
+  background-color: #ffc107; /* Giallo per i task in corso */
+}
