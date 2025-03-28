@@ -1,8 +1,10 @@
 import e from "cors";
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useContext } from "react";
+import { GlobalContext } from "../src/contexts/GlobalContext";
 const symbols = "?!@#$%^&*()_+[]{}|;':\",./<>?`~";
 
 export default function Addtask() {
+  const { addTask } = useContext(GlobalContext);
   const [taskTitle, setTaskTitle] = useState("");
   const descriptionRef = useRef();
   const statusRef = useRef();
@@ -16,7 +18,7 @@ export default function Addtask() {
     }
     return "";
   }, [taskTitle]);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (taskNameError) {
       alert(taskNameError);
@@ -28,7 +30,15 @@ export default function Addtask() {
       status: statusRef.current.value,
     };
 
-    console.log(newTask);
+    try {
+      await addTask(newTask);
+      alert("Task aggiunta con successo");
+      setTaskTitle("");
+      descriptionRef.current.value = "";
+      statusRef.current.value = "To do";
+    } catch (error) {
+      alert("Errore durante l'aggiunta della task: " + error.message);
+    }
   };
 
   return (
