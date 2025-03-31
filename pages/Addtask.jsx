@@ -37,7 +37,7 @@ export default function Addtask() {
       descriptionRef.current.value = "";
       statusRef.current.value = "To do";
     } catch (error) {
-      alert("Errore durante l'aggiunta della task: " + error.message);
+      alert("Errore durante l'aggiunta della task: " + error.message);  
     }
   };
 
