@@ -1,12 +1,5 @@
 [
   {
-    "title": "Comprare il latte",
-    "description": "Supermercato sotto casa",
-    "status": "To do",
-    "id": 1,
-    "createdAt": "2025-03-25T21:26:05.964Z"
-  },
-  {
     "title": "Leggere un libro",
     "description": "Capitolo 3",
     "status": "To do",
@@ -33,19 +26,5 @@
     "status": "Doing",
     "id": 5,
     "createdAt": "2025-03-20T21:26:05.965Z"
-  },
-  {
-    "title": "Fare esercizio",
-    "description": "30 minuti di corsa",
-    "status": "Done",
-    "id": 6,
-    "createdAt": "2025-03-26T21:26:05.965Z"
-  },
-  {
-    "title": "dare da mangiare ad alessio",
-    "description": "non le darò da mangiare",
-    "status": "To do",
-    "id": 7,
-    "createdAt": "2025-03-31T16:42:17.778Z"
   }
 ]

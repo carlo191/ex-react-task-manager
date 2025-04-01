@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GlobalContext } from "../src/contexts/GlobalContext";
 import TaskRow from "../src/components/TaskRow";
+import Modal from "../src/components/Modal";
 
 export default function TaskList() {
   const { tasks } = useContext(GlobalContext);
