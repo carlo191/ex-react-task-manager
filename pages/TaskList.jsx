@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useMemo } from "react";
 import { GlobalContext } from "../src/contexts/GlobalContext";
 import TaskRow from "../src/components/TaskRow";
 import Modal from "../src/components/Modal";
@@ -6,19 +6,53 @@ import Modal from "../src/components/Modal";
 export default function TaskList() {
   const { tasks } = useContext(GlobalContext);
   console.log("Tasks:", tasks);
+  const [sortBy, setSortBy] = useState("createdAt");
+  const [sortOrder, setSortOrder] = useState("1");
+  const sortIcon = sortOrder === "1" ? "↓" : "↑";
+  const handleSort = (key) => {
+    if (sortBy === key) {
+      setSortOrder((prev) => prev * -1);
+    } else {
+      setSortBy(key);
+      setSortOrder("1");
+    }
+  };
+  const sortedTaks = useMemo(() => {
+    return [...tasks].sort((a, b) => {
+      let comparison;
+      if (sortBy === "title") {
+        comparison = a.title.localeCompare(b.title);
+      } else if (sortBy === "status") {
+        const statusOptions = ["To do", "Doing", "Done"];
+        comparison =
+          statusOptions.indexOf(a.status) - statusOptions.indexOf(b.status);
+      } else if (sortBy === "createdAt") {
+        comparison =
+          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+      }
+      return comparison * sortOrder;
+    });
+  }, [tasks, sortBy, sortOrder]);
   return (
     <div>
       <h1>Task List</h1>
       <table>
         <thead>
           <tr>
-            <th>Nome</th>
-            <th>Stato</th>
-            <th>Data di creazione</th>
+            <th onClick={() => handleSort("title")}>
+              Nome {sortBy === "title" && sortIcon}
+            </th>
+            <th onClick={() => handleSort("status")}>
+              Stato {sortBy === "status" && sortIcon}
+            </th>
+            <th onClick={() => handleSort("createdAt")}>
+              {" "}
+              Data di creazione {sortBy === "createdAt" && sortIcon}
+            </th>
           </tr>
         </thead>
         <tbody>
-          {tasks.map((task) => (
+          {sortedTaks.map((task) => (
             <TaskRow key={task.id} task={task} />
           ))}
         </tbody>
